@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class Conjured extends inventoryItem {
+public class Conjured extends InventoryItem {
 
     public static final String NAME = "Conjured";
     public Conjured(Item item) {

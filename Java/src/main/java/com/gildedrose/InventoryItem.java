@@ -1,13 +1,13 @@
 package com.gildedrose;
 
-public class inventoryItem {
+public class InventoryItem {
     protected   Item item;
 
-    public inventoryItem(Item item) {
+    public InventoryItem(Item item) {
         this.item = item;
     }
 
-    public static inventoryItem create(Item item) {
+    public static InventoryItem create(Item item) {
         if(item.getName().equals(AgedBrie.NAME)) {
             return new AgedBrie(item);
         }
@@ -20,7 +20,7 @@ public class inventoryItem {
         if(item.getName().equals(Conjured.NAME)) {
             return new Conjured(item);
         }
-        return new inventoryItem(item);
+        return new InventoryItem(item);
     }
 
     public void dailyUpdate() {
