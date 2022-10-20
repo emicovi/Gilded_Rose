@@ -11,8 +11,9 @@ public class ItemFactory {
             return new Sulfuras(item);
         } else if (item.name.equals(Conjured.NAME)) {
             return new Conjured(item);
-        } else
-            return new InventoryItem(item);
+        } else {
+            return new StandardItem(item);
+        }
     }
 
 }

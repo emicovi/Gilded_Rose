@@ -1,13 +1,13 @@
 package com.gildedrose;
 
-public class InventoryItem {
+public abstract class InventoryItem {
     private final Item item;
 
     public Item getItem() {
         return item;
     }
 
-    public InventoryItem(Item item) {
+    protected InventoryItem(Item item) {
         this.item = item;
     }
 
