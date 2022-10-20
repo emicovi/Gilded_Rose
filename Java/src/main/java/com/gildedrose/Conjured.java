@@ -9,7 +9,7 @@ public class Conjured extends InventoryItem {
 
     @Override
     protected void decreaseQuality() {
-        item.quality = Math.max(0, item.quality - 2);
+        getItem().quality = Math.max(0, getItem().quality - 2);
 
     }
 }

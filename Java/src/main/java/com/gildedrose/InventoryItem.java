@@ -1,7 +1,11 @@
 package com.gildedrose;
 
 public class InventoryItem {
-    protected   Item item;
+    private  Item item;
+
+    public Item getItem() {
+        return item;
+    }
 
     public InventoryItem(Item item) {
         this.item = item;
