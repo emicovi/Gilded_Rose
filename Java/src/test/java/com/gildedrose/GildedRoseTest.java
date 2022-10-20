@@ -199,22 +199,39 @@ class GildedRoseTest {
         assertThat(item3.sellIn).isEqualTo(14);
     }
 
-    /*
+
     @Test
     void conjured_items_degrade_twice_as_fast() {
-        Item item = new Item("Conjured Mana Cake", 3, 6);
+        Item item = new Item("Conjured", 3, 6);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertThat(item.quality).isEqualTo(4);
         assertThat(item.sellIn).isEqualTo(2);
     }
 
-     */
+    @Test
+    void conjured_items_degrade_twice_as_fast_after_sell_by_date() {
+        Item item = new Item("Conjured", 0, 6);
+        GildedRose subject = new GildedRose(new Item[] { item });
 
+        subject.updateInventory();
 
+        assertThat(item.quality).isEqualTo(2);
+        assertThat(item.sellIn).isEqualTo(-1);
+    }
 
+    @Test
+    void conjured_items_can_never_have_negative_quality() {
+        Item item = new Item("Conjured", 0, 1);
+        GildedRose subject = new GildedRose(new Item[] { item });
+
+        subject.updateInventory();
+
+        assertThat(item.quality).isEqualTo(0);
+        assertThat(item.sellIn).isEqualTo(-1);
+    }
 
 
 }
