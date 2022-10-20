@@ -9,7 +9,7 @@ class GildedRose {
 
     public void updateInventory() {
         for (Item item : items) {
-            InventoryItem.create(item).dailyUpdate();
+            ItemFactory.getInventoryItem(item).dailyUpdate();
         }
     }
 

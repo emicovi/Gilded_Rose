@@ -1,7 +1,7 @@
 package com.gildedrose;
 
 public class InventoryItem {
-    private  Item item;
+    private final Item item;
 
     public Item getItem() {
         return item;
@@ -9,22 +9,6 @@ public class InventoryItem {
 
     public InventoryItem(Item item) {
         this.item = item;
-    }
-
-    public static InventoryItem create(Item item) {
-        if(item.getName().equals(AgedBrie.NAME)) {
-            return new AgedBrie(item);
-        }
-        if(item.getName().equals(BackstagePasses.NAME)) {
-            return new BackstagePasses(item);
-        }
-        if(item.getName().equals(Sulfuras.NAME)) {
-            return new Sulfuras(item);
-        }
-        if(item.getName().equals(Conjured.NAME)) {
-            return new Conjured(item);
-        }
-        return new InventoryItem(item);
     }
 
     public void dailyUpdate() {
